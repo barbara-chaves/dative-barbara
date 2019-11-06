@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/app.scss";
 import Map from "./Map";
-import Details from './Details'
+import Header from "./Header";
 import getDataFromServer from "../service/getDataFromServer";
 
 class App extends React.Component {
@@ -28,9 +28,15 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <Map earthquakes={this.state.earthquakes} handleClick={this.handleClick}/>
-        <Details details={this.state.selectedPin}/>
+      <div className="app">
+        <Header />
+        <div className="app__container">
+          <Map
+            earthquakes={this.state.earthquakes}
+            handleClick={this.handleClick}
+            selected={this.state.selectedPin}
+          />
+        </div>
       </div>
     );
   }

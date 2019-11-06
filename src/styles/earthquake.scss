@@ -1,38 +1,30 @@
+@import "./variables.scss";
 .earthquake {
-  background-color: red;
-  width: 30px;
-  height: 30px;
-  border-radius: 50% 50% 50% 0;
-  position: absolute;
-  cursor: pointer;
-  // -webkit-transform: rotate(-45deg);
-  // -moz-transform: rotate(-45deg);
-  // -o-transform: rotate(-45deg);
-  // -ms-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  left: 50%;
-  top: 50%;
-  // margin: -20px 0 0 -20px;
-  // -webkit-animation-name: bounce;
-  // -moz-animation-name: bounce;
-  // -o-animation-name: bounce;
-  // -ms-animation-name: bounce;
-  // animation-name: bounce;
-  // -webkit-animation-fill-mode: both;
-  // -moz-animation-fill-mode: both;
-  // -o-animation-fill-mode: both;
-  // -ms-animation-fill-mode: both;
-  // animation-fill-mode: both;
-  // -webkit-animation-duration: 1s;
-  // -moz-animation-duration: 1s;
-  // -o-animation-duration: 1s;
-  // -ms-animation-duration: 1s;
-  // animation-duration: 1s;
+  &__pin {
+    background-color: $primary;
+    width: 20px;
+    height: 20px;
+    box-shadow: 0 0 3px 1px $borderPin;
+    border-radius: 50% 50% 50% 0;
+    position: absolute;
+    cursor: pointer;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    left: 50%;
+    top: 50%;
 
-  &__title {
-    display: none;
-    :hover {
-      display: inline-block;
+    &.selected {
+      z-index: 2;
+      transform: scale(1.5) translate(0px, 0px);
+      border: none;
+      background-image: url("../images/earthquake-logo.png");
+      background-size: contain;
+      background-position: center;
+      background-color: $background;
+      border-radius: 50%;
     }
   }
 }

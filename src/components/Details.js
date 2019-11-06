@@ -2,18 +2,18 @@ import React from "react";
 import "../styles/details.scss";
 
 const Details = ({ details }) => {
-  const { place, type, time, mag } = details;
-  const date = new Date(parseInt(time)).toUTCString();
+  const { place, time, mag } = details;
+
+  const newTime = new Date(parseInt(time));
+  
   return Object.keys(details).length ? (
     <div className="details">
-      <p className="details__place">Place: {place}</p>
-      <p className="details__date">Date: {date}</p>
-      <p className="details__date">Type: {type}</p>
-      <p className="details__date">Magnitude: {mag}</p>
+      <p className="details__data"><span>Location: </span>{place}</p>
+      <p className="details__data"><span>Date: </span>{newTime.toLocaleDateString()}</p>
+      <p className="details__data"><span>Time: </span>{newTime.toLocaleTimeString()}</p>
+      <p className="details__data"><span>Magnitude: </span>{mag}</p>
     </div>
-  ) : <div className='empty'>
-    <p className='empty__text'>Click a pin to see more details</p>
-  </div>;
+  ) : null;
 };
 
 export default Details;

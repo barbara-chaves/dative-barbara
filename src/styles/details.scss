@@ -1,4 +1,19 @@
+@import "./variables.scss";
+
 .details {
-  width: 30%;
-  height: 100vh;
+  z-index: 1;
+  position: absolute;
+  min-width: 200px;
+  max-width: 300px;
+  padding: 25px 15px 15px 25px;
+  box-shadow: 0 0 3px 1px $borderPin;
+  border-radius: 12px;
+  background-color: $background;
+  &__data {
+    margin: 0;
+    color: $borderPin;
+    & span {
+      font-weight: 600;
+    }
+  }
 }
