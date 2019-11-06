@@ -1,35 +1,41 @@
 import React from 'react';
 import GoogleMapReact from 'google-map-react';
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
- 
-class Map extends React.Component {
-  static defaultProps = {
+import Earthquake from './Earthquake'
+
+
+const Map = ({earthquakes, handleClick}) => {
+
+  const defaultProps = {
     center: {
       lat: 59.95,
       lng: 30.33
     },
-    zoom: 11
+    zoom: 1
   };
+  
+  const renderEarthQuakes = () => {
+    return earthquakes.map(({coordinates, id, title}) => {
+      const {lat, lng} = coordinates;
+      return(
+        <Earthquake key={id} lat={lat} lng={lng} title={title} id={id} hadleClick={handleClick}/>
+      )
+    })
+  }
  
-  render() {
     return (
-      // Important! Always set the container height explicitly
-      <div style={{ height: '500px', width: '500px' }}>
+      <div style={{ height: '100vh', width: '70%' }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: 'AIzaSyC7T-MBefVa-jF5Q1xoSwvVvWrHMgxUVb8' }}
-          defaultCenter={this.props.center}
-          defaultZoom={this.props.zoom}
+          defaultCenter={defaultProps.center}
+          defaultZoom={defaultProps.zoom}
         >
-          <AnyReactComponent
-            lat={59.955413}
-            lng={30.337844}
-            text="My Marker"
-          />
+         {renderEarthQuakes()}
+         
         </GoogleMapReact>
       </div>
     );
-  }
+  
 }
  
 export default Map;
