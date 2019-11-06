@@ -5,13 +5,14 @@
   position: absolute;
   min-width: 200px;
   max-width: 300px;
-  padding: 25px 15px 15px 25px;
-  box-shadow: 0 0 3px 1px $borderPin;
+  padding: 20px 15px 15px 25px;
+  box-shadow: 0 0 3px 1px $textColor;
   border-radius: 12px;
   background-color: $background;
   &__data {
-    margin: 0;
-    color: $borderPin;
+    margin: 5px 0;
+    font-family: $textFont;
+    color: $textColor;
     & span {
       font-weight: 600;
     }

@@ -1,5 +1,0 @@
-@import "./variables.scss";
-
-@mixin gradient {
-  background: linear-gradient(to right, $secondary, $background);
-}

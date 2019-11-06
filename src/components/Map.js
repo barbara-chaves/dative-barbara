@@ -4,11 +4,7 @@ import "../styles/map.scss";
 import Earthquake from "./Earthquake";
 import Details from "./Details";
 
-const Map = ({ earthquakes, selected, handleClick }) => {
-  const handleApiLoaded = (map, maps) => {
-    console.log(map.places)
-  };
-
+const Map = ({ earthquakes, selected, handleClick, center }) => {
   const defaultProps = {
     center: {
       lat: 59.95,
@@ -17,13 +13,9 @@ const Map = ({ earthquakes, selected, handleClick }) => {
     zoom: 1
   };
 
-  const getSelectedPin = id => {
-    return id === selected.id ? "selected" : "";
-  };
+  const getSelectedPin = id => id === selected.id ? "selected" : "";
 
-  const renderDetails = id => {
-    return id === selected.id ? <Details details={selected} /> : null;
-  };
+  const renderDetails = id => id === selected.id ? <Details details={selected} /> : null;
 
   const renderEarthQuakes = () => {
     return earthquakes.map(({ coordinates, id, title }) => {
@@ -48,11 +40,10 @@ const Map = ({ earthquakes, selected, handleClick }) => {
       <GoogleMapReact
         bootstrapURLKeys={{ key: "AIzaSyC7T-MBefVa-jF5Q1xoSwvVvWrHMgxUVb8" }}
         defaultCenter={defaultProps.center}
+        center={center}
         defaultZoom={defaultProps.zoom}
-        yesIWantToUseGoogleMapApiInternals
-        onGoogleApiLoaded={({ map, maps }) => handleApiLoaded(map, maps)}
-        hoverDistance={2}
         >
+        
         {renderEarthQuakes()}
       </GoogleMapReact>
     </div>
