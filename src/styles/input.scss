@@ -1,0 +1,14 @@
+@import "./variables.scss";
+.input {
+  z-index: 4;
+  position: absolute;
+  top: 77.5px;
+  right: 60px;
+  width: 200px;
+  height: 20px;
+  box-shadow: 0 0 2px 0.5px $borderPin;
+  border-radius: 10px;
+  border: none;
+  padding-left: 10px;
+  background-color: white;
+}

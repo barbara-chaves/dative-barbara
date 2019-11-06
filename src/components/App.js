@@ -2,6 +2,8 @@ import React from "react";
 import "../styles/app.scss";
 import Map from "./Map";
 import Header from "./Header";
+import Footer from './Footer'
+import SearchBox from './SearchBox'
 import getDataFromServer from "../service/getDataFromServer";
 
 class App extends React.Component {
@@ -12,12 +14,14 @@ class App extends React.Component {
       selectedPin: {}
     };
     this.handleClick = this.handleClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
     getDataFromServer().then(earthquakes => {
       this.setState({ earthquakes });
     });
+    // this.searchBox = new google.maps.places.SearchBox(input);
   }
 
   handleClick = id => {
@@ -26,17 +30,23 @@ class App extends React.Component {
     });
   };
 
+  handleChange = (e) => {
+    console.log(e.target.value)
+  }
+
   render() {
     return (
       <div className="app">
         <Header />
         <div className="app__container">
+          <SearchBox onChange={this.handleChange} value={this.value}/>
           <Map
             earthquakes={this.state.earthquakes}
             handleClick={this.handleClick}
             selected={this.state.selectedPin}
           />
         </div>
+        <Footer/>
       </div>
     );
   }
