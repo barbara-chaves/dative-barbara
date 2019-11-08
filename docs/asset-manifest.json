@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "./static/css/main.6e41da34.chunk.css",
-    "main.js": "./static/js/main.4a3c6536.chunk.js",
-    "main.js.map": "./static/js/main.4a3c6536.chunk.js.map",
+    "main.css": "./static/css/main.a717530f.chunk.css",
+    "main.js": "./static/js/main.1fa6aacf.chunk.js",
+    "main.js.map": "./static/js/main.1fa6aacf.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.904293bc.js",
     "runtime-main.js.map": "./static/js/runtime-main.904293bc.js.map",
     "static/js/2.b3d9447a.chunk.js": "./static/js/2.b3d9447a.chunk.js",
     "static/js/2.b3d9447a.chunk.js.map": "./static/js/2.b3d9447a.chunk.js.map",
     "index.html": "./index.html",
-    "precache-manifest.f9f63f80bf7c019844efdf3b9cf6dec7.js": "./precache-manifest.f9f63f80bf7c019844efdf3b9cf6dec7.js",
+    "precache-manifest.653ad3259b65cad78617427b540daf23.js": "./precache-manifest.653ad3259b65cad78617427b540daf23.js",
     "service-worker.js": "./service-worker.js",
-    "static/css/main.6e41da34.chunk.css.map": "./static/css/main.6e41da34.chunk.css.map",
+    "static/css/main.a717530f.chunk.css.map": "./static/css/main.a717530f.chunk.css.map",
     "static/media/dative-logo.webp": "./static/media/dative-logo.b18da40b.webp",
     "static/media/header.scss": "./static/media/earthquake-logo.ebb44511.png"
   },
   "entrypoints": [
     "static/js/runtime-main.904293bc.js",
     "static/js/2.b3d9447a.chunk.js",
-    "static/css/main.6e41da34.chunk.css",
-    "static/js/main.4a3c6536.chunk.js"
+    "static/css/main.a717530f.chunk.css",
+    "static/js/main.1fa6aacf.chunk.js"
   ]
 }
