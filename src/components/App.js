@@ -35,6 +35,8 @@ class App extends React.Component {
 
   handleChange = e => this.setState({ input: e.target.value });
 
+  handleCloseDetClick = e => this.setState({ selectedPin: {} });
+
   centerMap = () => {
     const place = this.state.earthquakes.find(item =>
       item.place.toLowerCase().includes(this.state.input.toLocaleLowerCase())
@@ -47,12 +49,13 @@ class App extends React.Component {
       <div className="app">
         <Header />
         <div className="app__container">
-          <SearchBox onchange={this.handleChange} value={this.value} />
+          <SearchBox onchange={this.handleChange} value={this.state.input} />
           <Map
             earthquakes={this.state.earthquakes}
             handleClick={this.handleClick}
             selected={this.state.selectedPin}
             center={this.centerMap()}
+            onCloseDetClick={this.handleCloseDetClick}
           />
         </div>
         <Footer />

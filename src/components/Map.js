@@ -4,7 +4,7 @@ import "../styles/map.scss";
 import Earthquake from "./Earthquake";
 import Details from "./Details";
 
-const Map = ({ earthquakes, selected, handleClick, center }) => {
+const Map = ({ earthquakes, selected, handleClick, center, onCloseDetClick }) => {
   const defaultProps = {
     center: {
       lat: 59.95,
@@ -15,7 +15,7 @@ const Map = ({ earthquakes, selected, handleClick, center }) => {
 
   const getSelectedPin = id => id === selected.id ? "selected" : "";
 
-  const renderDetails = id => id === selected.id ? <Details details={selected} /> : null;
+  const renderDetails = id => id === selected.id ? <Details details={selected} onCloseDetClick={onCloseDetClick}/> : null;
 
   const renderEarthQuakes = () => {
     return earthquakes.map(({ coordinates, id, title }) => {

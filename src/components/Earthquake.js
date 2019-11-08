@@ -10,9 +10,10 @@ const Earthquake = ({
   renderDetails
 }) => {
   return (
-    <div className="earthquake" onClick={() => hadleClick(id)}>
+    <div className="earthquake">
       {renderDetails}
       <div
+        onClick={() => hadleClick(id)}
         className={"earthquake__pin " + selectedPin}
         lng={lng}
         lat={lat}

@@ -17,4 +17,12 @@
       font-weight: 600;
     }
   }
+  &__button {
+    position: absolute;
+    transform: translate(145px, -15px);
+    border: none;
+    border-radius: 12%;
+    background-color: $secondary;
+    color: white;
+  }
 }
